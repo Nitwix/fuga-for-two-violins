@@ -1,8 +1,14 @@
 \version "2.18.2"
 
+\include "articulate.ly"
+
 midiBloc = {
     \tempo 4 = 100
   }
+global = {
+  \time 2/2
+}
+
 
 \header {
   title = \markup{Fuga}
@@ -12,8 +18,10 @@ midiBloc = {
   arranger = "Arrangers: Niels Lachat, Baptiste Vial"
 }
 
-violinOne =  \relative g' {
-  \time 2/2
+violinOne =  \new Voice \relative g' {
+  \set Staff.instrumentName = #"Violin 1"
+  \set Staff.shortInstrumentName = #"V1"
+  \set Staff.midiInstrument = #"violin"
   
   % l1 p.o.
   \partial 2 g2->
@@ -21,7 +29,7 @@ violinOne =  \relative g' {
   g2 d4-.( e-.)
   f e f g8-.( f-.)
   e4 f8 g c2
-  e4 d8-.( c-.) b4 cis
+  e4-_ d8-.( c-.) b4 cis
   d2 a4-.( b-.)
   
   % l2 p.o.
@@ -49,11 +57,20 @@ violinOne =  \relative g' {
   r2 e
   <<fis, a>> <f d'>
   
+  % mesure 26-30
+  r8 g a b <<ees,2 c'>>
+  d, e!
+  f4 e f g8-.( f-.)
+  e2 fis
+  g d'
+  
 }
 
 
-violinTwo = \relative g' {
-  \time 2/2
+violinTwo = \new Voice \relative g' {
+  \set Staff.instrumentName = #"Violin 2"
+  \set Staff.shortInstrumentName = #"V2"
+  \set Staff.midiInstrument = #"violin"
   
   % l1 p.o.
   \partial 2 r2
@@ -75,8 +92,8 @@ violinTwo = \relative g' {
   <<a2 e'>> a
   e <a, e'>
   d f
-  e r
-  d r
+  e1 %r pas sûr à voir si on tient les rondes
+  d1 %r
   
   % l4 p.o.
   a'2 d,
@@ -87,32 +104,26 @@ violinTwo = \relative g' {
   <e, c'> <f d'> <<c2 g'>>
   d4 c8-.( b-.) a4 b
   
+  % mesure 26-30
+  <<c2 e>> g,4 a
+  bes a bes c8-.( bes-.)
+  a2 b!
+  c4 b c d8-.( c-.)
+  b4 a <<bes2 g'>>
+  
 }
 
 \score {
-  %\midi {\midiBloc}
-  
+  \new StaffGroup 
   <<
-    \new Staff \with
-    {
-      instrumentName = #"Violin 1"
-      shortInstrumentName = #"V1"
-    }
-    { 
-      \set Staff.midiInstrument = #"violin"
+    \new Staff 
+    <<
+      \global 
       \violinOne 
-    }
-  
-  
-    \new Staff \with
-    {
-      instrumentName = #"Violin 2"
-      shortInstrumentName = #"V2"
-    }
-    { 
-      \set Staff.midiInstrument = #"viola"
-      \violinTwo 
-    }
+    >>
+    \new Staff << \global \violinTwo >>
   >>
+  
+  %\midi {\midiBloc}
 }
 
