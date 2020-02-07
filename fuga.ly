@@ -1,6 +1,8 @@
 \version "2.18.2"
 
-%midiOutput = 
+midiBloc = {
+    \tempo 4 = 100
+  }
 
 \header {
   title = \markup{Fuga}
@@ -8,8 +10,6 @@
   composer = "Johann Sebastian Bach"
   opus = \markup{BWV 1005}
   arranger = "Arrangers: Niels Lachat, Baptiste Vial"
-  
-  instrument = "Violin 1"
 }
 
 violinOne =  \relative g' {
@@ -23,6 +23,11 @@ violinOne =  \relative g' {
   d2 a4-.( b-.)
   
   c b c d8-.( c-.)
+  b4 c8-.( d-.) e2~
+  e d~
+  d4 b <e g> d
+  <cis a'> g'8-.( f-.) <<c4 e>> fis
+  <b, g'>2 <<bes4-1-.( d>> e-.)
   
 }
 
@@ -33,15 +38,20 @@ violinTwo = \relative g' {
   r1 r r 
   r2 a
   gis g
+  fis f
   
+  e4 d e fis
+  g f! g e
+  f e f d
+  e2 e
+  <a, e'> <a a'>
+  <g d'> g
   
   
 }
 
 \score {
-  \midi {
-    \tempo 4 = 100
-  }
+  %\midi {\midiBloc}
   
   <<
     \new Staff \with
