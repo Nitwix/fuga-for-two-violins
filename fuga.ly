@@ -1,7 +1,5 @@
 \version "2.18.2"
 
-\include "articulate.ly"
-
 midiBloc = {
     \tempo 4 = 100
   }
@@ -86,6 +84,14 @@ violinOne =  \new Voice \relative g' {
   a,8 a' g f <<a,4 e'>> fis
   <<g,8 d'>> g f! e <<g,4 d'>> e
   
+  % mesure 47-52
+  <c e> f8 e f4 g8 f
+  <<c4 e>> r4 r2
+  e4 r d r
+  d c8 b c4 d8 e
+  <<c4 f>> f8 e f4 g8 f
+  e4 r4 r2
+  
   
 }
 
@@ -156,6 +162,14 @@ violinTwo = \new Voice \relative g' {
   <<cis8 e>> r8 r r <<c4 e>> r4
   b r4 bes4 r
   
+  % mesure 47-52
+  <a f'> r4 r2
+  <<g4 g'>> g8 f g4 a8 g
+  <<f4 a>> f8 e f4 g8 f
+  e4 r a r
+  d, r g r
+  c c,8-.( d-.) e g f a
+  
 }
 
 \score {
@@ -169,6 +183,6 @@ violinTwo = \new Voice \relative g' {
     \new Staff << \global \violinTwo >>
   >>
   
-  \midi {\midiBloc}
+  %\midi {\midiBloc}
 }
 
