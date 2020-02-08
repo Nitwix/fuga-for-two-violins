@@ -64,6 +64,25 @@ violinOne =  \new Voice \relative g' {
   e2 fis
   g d'
   
+  % mesure 31-36
+  cis c
+  b bes
+  a b!
+  r4  c8-.( b!-.) a4 r
+  r d8-.( c-.) d4 r
+  r bes8-.( a-.) g4 r
+  
+  % mesure 37-41
+  r c8-.( bes-.) c4 r
+  r a8-.( g-.) f g e f
+  <b,! d> r r r r2 % pas sûr de la notation, à voir
+  r4 c'8-.( b-.) a c e g,
+  <d f> r r r r2
+  
+  % mesure 42-46
+  
+  
+  
 }
 
 
@@ -110,6 +129,21 @@ violinTwo = \new Voice \relative g' {
   a2 b!
   c4 b c d8-.( c-.)
   b4 a <<bes2 g'>>
+  
+  % mesure 31-36
+  <<a,4 a'>> g8-.( f-.) e4 fis
+  <<g,2 g'>> d4-.( e-.)
+  <d f> e <g, f'> g'8-.( f-.)
+  <<c4 e>> r2 g4
+  <c, fis> r2 <<c4 fis>>
+  <bes, g'> r2 f'!4
+  
+  % mesure 37-41
+  <bes, e> r2 <<bes4 e>>
+  <a, f'> r r2
+  r8 a' d c b! a g f
+  <<c4 e>> r r2
+  r8 a f' e d c b a
   
 }
 
