@@ -80,7 +80,11 @@ violinOne =  \new Voice \relative g' {
   <d f> r r r r2
   
   % mesure 42-46
-  
+  <<e8 g(>> a16 b c8) d e f g r
+  r e a g f( g16 a) d,8( e16 f)
+  b,8 d e f g2
+  a,8 a' g f <<a,4 e'>> fis
+  <<g,8 d'>> g f! e <<g,4 d'>> e
   
   
 }
@@ -145,6 +149,13 @@ violinTwo = \new Voice \relative g' {
   <<c4 e>> r r2
   r8 a f' e d c b a
   
+  % mesure 42-46
+  r2 r8 r r bes
+  <f a> r8 r r r4 r
+  f8 r8 r4 <<e4 c'>> <d, bes'>
+  <<cis8 e>> r8 r r <<c4 e>> r4
+  b r4 bes4 r
+  
 }
 
 \score {
@@ -158,6 +169,6 @@ violinTwo = \new Voice \relative g' {
     \new Staff << \global \violinTwo >>
   >>
   
-  %\midi {\midiBloc}
+  \midi {\midiBloc}
 }
 
