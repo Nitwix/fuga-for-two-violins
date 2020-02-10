@@ -100,6 +100,11 @@ violinOne =  \new Voice \relative g' {
   <a, g'> <a f'> 
   <d f> <c e>
   
+  % mesure 59-62
+  <<c4 e>> d8-.( e-.) f g a c,
+  b8 d( c b a g f d'-.)
+  g b, c e, d( c' f) b,
+  c d ees f g a! b! c
   
 }
 
@@ -185,6 +190,12 @@ violinTwo = \new Voice \relative g' {
   r b, e d % pas sûr comment diviser le premier temps
   <cis e> a <d a'> c
   <b g'> g <c g'> bes
+  
+  % mesure 59-62
+  <<a4 f'>> r4 r2
+  <<g,4-_ f'>> r4 r2
+  r r4 <g, d'> % pas sûr de cet accord, à tester
+  <aes ees'> r4 r2
   
 }
 
