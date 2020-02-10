@@ -92,6 +92,14 @@ violinOne =  \new Voice \relative g' {
   <<c4 f>> f8 e f4 g8 f
   e4 r4 r2
   
+  % mesure 53-58
+  <<c4 e>> r r <c e>
+  <c f> r r2
+  <<d4 fis>> r r <c fis>
+  <b g'> r <<b2 g'>>
+  <a, g'> <a f'> 
+  <d f> <c e>
+  
   
 }
 
@@ -170,19 +178,23 @@ violinTwo = \new Voice \relative g' {
   d, r g r
   c c,8-.( d-.) e g f a
   
+  % mesure 53-58
+  g4 bes,8-.( a-.) bes4 g'
+  <a, a'> d8-.( e-.) f g f g
+  a4 c,8-.( b-.) c4 a'
+  r b, e d % pas sûr comment diviser le premier temps
+  <cis e> a <d a'> c
+  <b g'> g <c g'> bes
+  
 }
 
 \score {
   \new StaffGroup 
   <<
-    \new Staff 
-    <<
-      \global 
-      \violinOne 
-    >>
+    \new Staff << \global \violinOne >>
     \new Staff << \global \violinTwo >>
   >>
   
-  %\midi {\midiBloc}
+  \midi {\midiBloc}
 }
 
